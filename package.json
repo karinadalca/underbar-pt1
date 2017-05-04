@@ -1,0 +1,22 @@
+{
+  "name": "underbar",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tim-hr/underbar.git"
+  },
+  "author": "manzoid <manzoid@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tim-hr/underbar/issues"
+  },
+  "homepage": "https://github.com/tim-hr/underbar#readme",
+  "devDependencies": {
+    "jest": "^19.0.2",
+    "jest-cli": "^19.0.2"
+  }
+}
