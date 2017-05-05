@@ -18,4 +18,26 @@ describe('reject()', () => {
     const orderItems = _.reject(order, (value) => value === null);
     expect(orderItems).toEqual(['burger', 'ketchup', 'cookie']);
   });
+
+  it('rejects dogs from an array of animal objects', () => {
+    const animals = [
+      { name: 'Spotty', species: 'dog', age: 1},
+      { name: 'Scooby', species: 'dog', age: 3},
+      { name: 'Nibbler', species: 'niblonian', age: 5}
+    ];
+    expect(_.reject(animals, animal => animal.species === 'dog')).toEqual([{ name: 'Nibbler', species: 'niblonian', age: 5}]);
+  });
+
+  it('returns entire array if you reject cats from an array of animal objects that doesn not have cats', () => {
+    const animals = [
+      { name: 'Spotty', species: 'dog', age: 1},
+      { name: 'Scooby', species: 'dog', age: 3},
+      { name: 'Nibbler', species: 'niblonian', age: 5}
+    ];
+    expect(_.reject(animals, animal => animal.species === 'cat')).toEqual([
+      { name: 'Spotty', species: 'dog', age: 1},
+      { name: 'Scooby', species: 'dog', age: 3},
+      { name: 'Nibbler', species: 'niblonian', age: 5}
+    ]);
+  });
 });

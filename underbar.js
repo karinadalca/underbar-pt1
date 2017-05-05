@@ -110,7 +110,7 @@ const filter = function(obj, callback=identity) {
   return result;
 };
 
-// Return object without the elements / object valuesthat were rejected by the callback.
+// Return object without the elements / object values that were rejected by the callback.
 const reject = function(arr, callback=identity) {
   return filter(arr, item => !callback(item));
 };
