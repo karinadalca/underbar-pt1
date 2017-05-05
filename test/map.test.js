@@ -6,4 +6,16 @@ describe('map()', () => {
     const mappedArr = _.map(arr, (el) => el * el);
     expect(mappedArr).toEqual([1, 4, 9, 16, 25]);
   });
+
+  it('returns empty array when given empty array', () => {
+    const arr = [];
+    const mappedArr = _.map(arr, (el) => el * el);
+    expect(mappedArr).toEqual([]);
+  });
+
+  it('returns empty array when given empty array', () => {
+    const arr = ['hey', 'this', 'is', 'a', 'fun','string'];
+    const concatString = _.map(arr, (el) => el + el);
+    expect(concatString).toEqual(['heyhey', 'thisthis', 'isis', 'aa', 'funfun','stringstring']);
+  });
 });
