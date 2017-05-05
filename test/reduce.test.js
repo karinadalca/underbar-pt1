@@ -13,4 +13,15 @@ describe('reduce()', () => {
     expect(result).toEqual(15);
   });
 
+  it('returns undefined when passed an empty arry *without* an explicit initial value for the accumulator', () => {
+    const nums = [];
+    const result = _.reduce(nums, (a, b) => a + b);
+    expect(result).toEqual(undefined);
+  });
+
+  it('return explicit initial with empty array and *with* an explicit initial value for the accumulator', () => {
+    const nums = [];
+    const result = _.reduce(nums, (acc, num) => acc + num, 5);
+    expect(result).toEqual(5);
+  });
 });
