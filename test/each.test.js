@@ -39,5 +39,34 @@ describe('each()', () => {
     });
     expect(count).toBe(3);
   });
-});
 
+  it('iterates over an empty array, passing that element, its corresponding index, and the entire array to the callback', () => {
+    const arr = [];
+    let count = 0;
+    _.each(arr, function(element, index, array) {
+      expect(element).toEqual(array[index]);
+      count += 1;
+    });
+    expect(count).toBe(0);
+  });
+
+  it('iterates over an empty array-like object, passing that element, its corresponding index, and the entire array to the callback', () => {
+    const arrayLikeObj = {};
+    let count = 0;
+    _.each(arrayLikeObj, function(element, index, iteratedArrayLikeObj) {
+      expect(element).toEqual(iteratedArrayLikeObj[index]);
+      count += 1;
+    });
+    expect(count).toBe(0);
+  });
+
+  it('iterates over an array of objects, passing that element, its corresponding index, and the entire array to the callback', () => {
+    const arr = [{'a': 1, 'b': 2}, {'a': 3, 'b': 4}, {'a': 5, 'b': 6}];
+    let count = 0;
+    _.each(arr, function(element, index, array) {
+      expect(element).toEqual(array[index]);
+      count += 1;
+    });
+    expect(count).toBe(3);
+  });
+});
