@@ -26,4 +26,8 @@ describe('indexOf()', () => {
     expect(_.indexOf(arr, 'bar', 2)).toBe(3);
   });
 
+  it('starts searching at the given offset for value only present before', () => {
+    const arr = ['foo', 'bar', 'baz', 'hat'];
+    expect(_.indexOf(arr, 'bar', 2)).toBe(-1);
+  });
 });

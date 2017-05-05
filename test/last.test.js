@@ -17,7 +17,7 @@ describe('last()', () => {
     expect(_.last(['a', 'b', 'c'], 0)).toEqual([]);
   });
 
-  it('returns empty array if you ask for ZERO elements', () => {
+  it('returns empty array if you ask for less than zero elements', () => {
     expect(_.last(['a', 'b', 'c'], -1)).toEqual([]);
   });
 });
