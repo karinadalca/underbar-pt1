@@ -23,4 +23,23 @@ describe('filter()', () => {
     const abilityScores = _.filter(characterAttributes, (value) => !isNaN(value));
     expect(abilityScores).toEqual([4, 7, 10, 16, 5, 4]);
   });
+
+  it('filters an array of animal to only dogs', () => {
+    const animals = [
+      { name: 'Spotty', species: 'dog', age: 1},
+      { name: 'Scooby', species: 'dog', age: 3},
+      { name: 'Nibbler', species: 'niblonian', age: 5}
+    ];
+    expect(_.filter(animals, animal => animal.species === 'dog')).toEqual([{ name: 'Spotty', species: 'dog', age: 1},
+      { name: 'Scooby', species: 'dog', age: 3}]);
+  });
+
+  it('filters an array of animal to empty array if cats aren not in the array', () => {
+    const animals = [
+      { name: 'Spotty', species: 'dog', age: 1},
+      { name: 'Scooby', species: 'dog', age: 3},
+      { name: 'Nibbler', species: 'niblonian', age: 5}
+    ];
+    expect(_.filter(animals, animal => animal.species === 'cat')).toEqual([]);
+  });
 });
