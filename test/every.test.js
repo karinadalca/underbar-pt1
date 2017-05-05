@@ -54,7 +54,7 @@ describe('every()', () => {
       expect(_.every(animals, animal => animal.species === 'dog')).toBe(true);
     });
 
-    it('returns true if all objects are not of species dog and we test for species', () => {
+    it('returns false if all objects are not of species dog and we test for species', () => {
       const animals = [
       { name: 'Spotty', species: 'dog', age: 1},
       { name: 'Scooby', species: 'dog', age: 3},
