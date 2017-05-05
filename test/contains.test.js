@@ -31,4 +31,17 @@ describe('contains()', () => {
     expect(_.contains(ponies, 'Applejack')).toBe(false);
   });
 
+  it('returns false if given empty array', () => {
+    const arr = [];
+    expect(_.contains(arr, 'length')).toBe(false);
+  });
+
+  it('returns false if given an array of objects to search through, even if property is present', () => {
+    const animals = [
+      { name: 'Spotty', species: 'dog', age: 1},
+      { name: 'Scooby', species: 'dog', age: 3},
+      { name: 'Nibbler', species: 'niblonian', age: 5}
+    ];
+    expect(_.contains(animals, 'species')).toBe(false);
+  });
 });
